@@ -30,6 +30,12 @@
 					"default": "/bin/rlc-lsp",
 					"description": "Path of rlc-lsp"
 				},
+				"rl-lsp.rlcArgs": {
+					"scope": "resource",
+					"type": "string",
+					"default": "",
+					"description": "arguments to pass to rlc-lsp"
+				},
 				"rl-lsp.maxNumberOfProblems": {
 					"scope": "resource",
 					"type": "number",

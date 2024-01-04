@@ -17,15 +17,17 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
     const value: string = workspace.getConfiguration().get('rl-lsp.rlcLSPPath');
-	let serverModule = value ? value : "/bin/rlc-lsp";
-	serverModule = "/tmp/asd";
-
+	const args: string = workspace.getConfiguration().get('rl-lsp.rlcArgs');
+	const splittedArgs = args.split(' ').filter((s: string) => {return s != "";});
+	const serverModule = value ? value : "/bin/rlc-lsp";
+ 
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	const serverOptions: ServerOptions = {
-		run: { command: serverModule, transport: TransportKind.stdio },
+		run: { command: serverModule, args: splittedArgs, transport: TransportKind.stdio },
 		debug: {
 			command: serverModule,
+			args: splittedArgs,
 			transport: TransportKind.stdio,
 		}
 	};
