@@ -1,9 +1,10 @@
 {
 	"name": "rl-lsp",
+    "publisher": "rulebooklanguage",
 	"description": "A language server for the rulebook language",
 	"author": "Massimo Fioravanti",
 	"license": "MIT",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:drblallo/rl-lsp.git"
@@ -27,7 +28,7 @@
 				"rl-lsp.rlcLSPPath": {
 					"scope": "resource",
 					"type": "string",
-					"default": "/bin/rlc-lsp",
+					"default": "rlc-lsp",
 					"description": "Path of rlc-lsp"
 				},
 				"rl-lsp.rlcArgs": {

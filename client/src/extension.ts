@@ -19,7 +19,7 @@ export function activate(context: ExtensionContext) {
     const value: string = workspace.getConfiguration().get('rl-lsp.rlcLSPPath');
 	const args: string = workspace.getConfiguration().get('rl-lsp.rlcArgs');
 	const splittedArgs = args.split(' ').filter((s: string) => {return s != "";});
-	const serverModule = value ? value : "/bin/rlc-lsp";
+	const serverModule = value ? value : ".venv/bin/rlc-lsp";
  
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
